@@ -1,0 +1,2 @@
+# systemUninstaller
+Uninstalls your system
